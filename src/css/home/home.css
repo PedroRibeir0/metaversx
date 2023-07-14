@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
+header {
+  position: absolute;
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+header .menu-icon {
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+header .menu-icon .line {
+  width: 26px;
+  height: 3px;
+  background-color: #ffffff;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+header .menu-icon #line-1.menu-close {
+  animation: closeLine1 0.4s forwards ease-in;
+}
+header .menu-icon #line-2.menu-close {
+  animation: closeLine2 0.4s forwards ease-in;
+}
+header .menu-icon #line-1.menu-open {
+  animation: openLine1 0.4s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+header .menu-icon #line-2.menu-open {
+  animation: openLine2 0.4s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+header .logo {
+  width: 190px;
+  position: relative;
+  top: 3px;
+  z-index: 10;
+  transition: filter 0.4s;
+}
+header .wallet-icon {
+  width: 21px;
+  cursor: pointer;
+}
+header .menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100vh;
+  padding-top: 150px;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  animation: showMenu 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+header .menu-container .menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #1D1D1D;
+  font-family: "Montserrat", sans-serif;
+}
+header .menu-container .menu-list li:hover {
+  color: #7d7d7d;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+@keyframes closeLine1 {
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(7px);
+    rotate: -45deg;
+    background-color: black;
+  }
+}
+@keyframes closeLine2 {
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(-8px);
+    background-color: black;
+    rotate: 45deg;
+  }
+}
+@keyframes openLine1 {
+  0% {
+    transform: translateY(7px);
+    rotate: -45deg;
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+@keyframes openLine2 {
+  0% {
+    transform: translateY(-8px);
+    rotate: 45deg;
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes showMenu {
+  0% {
+    transform: translateX(-100%);
+  }
+}
+.gamefi {
+  background-image: url("../../../public//images/mask-bg.svg");
+  background-position: -500px -400px;
+  background-color: #7700A1;
+  width: 100%;
+  height: 800px;
+  padding: 20px;
+  padding-top: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.gamefi h1 {
+  text-align: center;
+  line-height: normal;
+  text-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.05);
+  font-size: 31px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+.gamefi .g-image {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gamefi .g-image .statue {
+  z-index: 10;
+  animation: floating 3.1s infinite ease-in-out;
+}
+.gamefi .g-image .pedestal {
+  position: relative;
+  bottom: 195px;
+  z-index: 9;
+}
+.gamefi .join-now-button {
+  cursor: pointer;
+  margin-top: -200px;
+  background-color: #FF9C00;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 11px 0;
+  border-radius: 30px;
+  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.25);
+  font-size: 19px;
+  font-weight: 600;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+.gamefi .join-now-button:hover {
+  background-color: #ffb033;
+}
+.gamefi .join-now-button:active {
+  transform: scale(0.994);
+}
+.gamefi .how-it-works-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-top: 30px;
+  font-size: 19px;
+  font-weight: 600;
+  color: #FF9C00;
+  font-family: "Montserrat", sans-serif;
+}
+.gamefi .how-it-works-button:hover {
+  color: #ffb033;
+}
+.gamefi .how-it-works-button:active {
+  transform: scale(0.994);
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+body {
+  background-color: rgb(17, 17, 17);
+  height: 100vh;
+}
+
+.app {
+  width: 100%;
+}/*# sourceMappingURL=home.css.map */

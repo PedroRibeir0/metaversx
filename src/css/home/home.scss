@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+$inter: 'Inter', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+
+$orange: #FF9C00;
+$dark-orange: #CB7C00;
+$white: #ffffff;
+$light-gray: #c9c9c9;
+$dark-gray: #1D1D1D;
+$trans-gray: rgba(50, 50, 50, 0.800);
+$purple: #7700A1;
+
+$b-gray: #F4F4F4;
+$b-green: #B6D600;
+$b-dark-blue: #130FCE;
+$b-light-blue: #00B2FF;
+$b-pink: #FF73E9;
+
+@mixin font($size, $weight, $color, $family) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    font-family: $family;
+}
+
+@import 'header', 'gamefi';
+
+body{
+    background-color: rgb(17, 17, 17);
+    // background-color: white;
+    height: 100vh;
+}
+
+.app{
+    width: 100%;
+}

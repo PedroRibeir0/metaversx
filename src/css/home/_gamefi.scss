@@ -1,0 +1,94 @@
+.gamefi{
+    background-image: url('../../../public//images/mask-bg.svg');
+    background-position: -500px -400px;
+    background-color: $purple;
+    width: 100%;
+    height: 800px;
+    padding: 20px;
+    padding-top: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    
+    h1{
+        text-align: center;
+        line-height: normal;
+        text-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.05);
+        @include font(31px, 700, $white, $inter)
+    }
+
+    .g-image{
+        margin-top: -20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .statue{
+            z-index: 10;
+            animation: floating 3.1s infinite ease-in-out;
+        }
+        .pedestal{
+            position: relative;
+            bottom: 195px;
+            z-index: 9;
+        }
+        
+
+    }
+
+    .join-now-button{
+        cursor: pointer;
+        margin-top: -200px;
+        background-color: $orange;
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: 11px 0;
+        border-radius: 30px;
+        box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.25);
+
+        &:hover{
+            background-color: lighten($color: $orange, $amount: 10);
+        }
+        &:active{
+            transform: scale(0.994);
+        }
+        @include font(19px, 600, black, $montserrat)
+    }
+
+    .how-it-works-button{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        margin-top: 30px;
+
+        &:hover{
+            color: lighten($color: $orange, $amount: 10);
+        }
+        &:active{
+            transform: scale(0.994);
+        }
+        @include font(19px, 600, $orange, $montserrat)
+    }
+
+}
+
+@keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
