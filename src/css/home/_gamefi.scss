@@ -36,6 +36,56 @@
             z-index: 9;
         }
         
+        .earn-learn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 2px;
+            border: 2.5px solid $orange;
+            border-radius: 50px;
+            position: absolute;
+            left: 15px;
+            top: 210px;
+            
+            .yellow-circle{
+                width: 53px;
+                transition: all 15s linear;
+            }
+
+            .gamers-amount{
+                @include font(19px, 600, $orange, $inter);
+                margin-top: 10px;
+            }
+
+            .gamers{
+                @include font(10px, 400, $orange, $inter);
+                margin-bottom: 15px;
+            }
+        }
+
+        .yellow-line{
+            width: 180px;
+            position: absolute;
+            z-index: 10;
+            left: 42px;
+            top: 281px;
+        }
+
+        .ld{
+            width: 140px;
+            position: absolute;
+            z-index: 9;
+            left: 1px;
+            top: 315px;
+        }
+
+        .gui{
+            position: absolute;
+            right: 0;
+            top: 430px;
+            z-index: 8;
+        }
 
     }
 

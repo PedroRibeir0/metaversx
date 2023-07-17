@@ -10,7 +10,7 @@ header {
   padding: 0 20px;
 }
 header .menu-icon {
-  z-index: 10;
+  z-index: 12;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ header .menu-icon .line {
   width: 26px;
   height: 3px;
   background-color: #ffffff;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
 }
 header .menu-icon #line-1.menu-close {
   animation: closeLine1 0.4s forwards ease-in;
@@ -40,14 +40,15 @@ header .logo {
   width: 190px;
   position: relative;
   top: 3px;
-  z-index: 10;
-  transition: filter 0.4s;
+  z-index: 12;
+  transition: filter 0.4s linear;
 }
 header .wallet-icon {
   width: 21px;
   cursor: pointer;
 }
 header .menu-container {
+  z-index: 11;
   position: fixed;
   top: 0;
   left: 0;
@@ -159,6 +160,56 @@ header .menu-container .menu-list li:hover {
   bottom: 195px;
   z-index: 9;
 }
+.gamefi .g-image .earn-learn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2px;
+  border: 2.5px solid #FF9C00;
+  border-radius: 50px;
+  position: absolute;
+  left: 15px;
+  top: 210px;
+}
+.gamefi .g-image .earn-learn .yellow-circle {
+  width: 53px;
+  transition: all 15s linear;
+}
+.gamefi .g-image .earn-learn .gamers-amount {
+  font-size: 19px;
+  font-weight: 600;
+  color: #FF9C00;
+  font-family: "Inter", sans-serif;
+  margin-top: 10px;
+}
+.gamefi .g-image .earn-learn .gamers {
+  font-size: 10px;
+  font-weight: 400;
+  color: #FF9C00;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 15px;
+}
+.gamefi .g-image .yellow-line {
+  width: 180px;
+  position: absolute;
+  z-index: 10;
+  left: 42px;
+  top: 281px;
+}
+.gamefi .g-image .ld {
+  width: 140px;
+  position: absolute;
+  z-index: 9;
+  left: 1px;
+  top: 315px;
+}
+.gamefi .g-image .gui {
+  position: absolute;
+  right: 0;
+  top: 430px;
+  z-index: 8;
+}
 .gamefi .join-now-button {
   cursor: pointer;
   margin-top: -200px;
@@ -213,6 +264,41 @@ header .menu-container .menu-list li:hover {
     transform: translateY(0);
   }
 }
+.games {
+  position: absolute;
+  top: 700px;
+  left: -10px;
+  width: 110%;
+  background-color: #CB7C00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  transform: rotate(2deg);
+}
+.games .games-container {
+  position: relative;
+  top: 12px;
+  left: -10px;
+  background-color: #FF9C00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+  padding: 45px 0;
+  transform: rotate(-4deg);
+}
+.games .games-container .game-logo {
+  width: 83px;
+}
+.games .games-container .game-logo:nth-child(1) {
+  width: 58px;
+}
+.games .games-container .game-logo:nth-child(4) {
+  width: 110px;
+}
+
 body {
   background-color: rgb(17, 17, 17);
   height: 100vh;

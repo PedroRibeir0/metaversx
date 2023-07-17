@@ -4,11 +4,14 @@ export default function Gamefi() {
     <section className="gamefi">
         <h1>Gamefi Scholarship Play and Learn To Earn</h1>
         <div className="g-image">
-            <div className="earn-lear">
-                <img src="/images/yellow-circle.svg" alt="" className="yellow-circle" />
-                <span className="23k">23k</span>
+            <div className="earn-learn">
+                <img src="/images/yellow-circle.svg" alt="earn-learn" className="yellow-circle" />
+                <span className="gamers-amount">23k</span>
                 <span className="gamers">Gamer's</span>
             </div>
+            <img src="/images/yellow-line.svg" alt="yellow-line" className="yellow-line" />
+            <img src="/images/ld.svg" alt="ld" className="ld" />
+            <img src="/images/gui.svg" alt="gui" className="gui" />
             <img src="/images/main-images.svg" alt="man" className="statue"/>
             <img src="/images/pedestal.svg" alt="pedestal" className="pedestal"/>
         </div>
