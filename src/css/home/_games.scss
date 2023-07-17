@@ -1,4 +1,5 @@
 .games{
+    // overflow-x: hidden;
     position: absolute;
     top: 700px;
     left: -10px;
@@ -7,10 +8,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
     transform: rotate(2deg);
 
     .games-container{
+        overflow: hidden;
         position: relative;
         top: 12px;
         left: -10px;
@@ -22,15 +25,9 @@
         gap: 10px;
         padding: 45px 0;
         transform: rotate(-4deg);
-        .game-logo{
-            width: 83px;
 
-            &:nth-child(1){
-                width: 58px;
-            }
-            &:nth-child(4){
-                width: 110px;
-            }
+        .game-logo{
+            height: 29px;
         }
     }
 

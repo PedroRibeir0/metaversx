@@ -1,9 +1,10 @@
 'use client'
 import '../../css/home/home.css'
 import '../../css/index/index.css'
+import Header from './Header'
 import Gamefi from './Gamefi'
 import Games from './Games'
-import Header from './Header'
+import Units from './Units'
 
 
 
@@ -13,6 +14,7 @@ export default function Index() {
         <Header/>
         <Gamefi/>
         <Games/>
+        <Units/>
     </div>
   )
 }

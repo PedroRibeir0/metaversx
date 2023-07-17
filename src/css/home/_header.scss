@@ -24,19 +24,19 @@ header{
         }
 
         #line-1.menu-close{
-            animation: closeLine1 .4s forwards ease-in;
+            animation: closeLine1 .25s forwards ease-in;
         }
 
         #line-2.menu-close{
-            animation: closeLine2 .4s forwards ease-in;
+            animation: closeLine2 .25s forwards ease-in;
         }
 
         #line-1.menu-open{
-            animation: openLine1 .4s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+            animation: openLine1 .25s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         #line-2.menu-open{
-            animation: openLine2 .4s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+            animation: openLine2 .25s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
         }
     }
 
