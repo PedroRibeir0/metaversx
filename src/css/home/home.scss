@@ -10,7 +10,7 @@ $dark-orange: #CB7C00;
 $white: #ffffff;
 $light-gray: #c9c9c9;
 $dark-gray: #1D1D1D;
-$trans-gray: rgba(50, 50, 50, 0.800);
+$trans-gray: rgba(50, 50, 50, 0.870); 
 $purple: #7700A1;
 
 $b-gray: #F4F4F4;
@@ -26,7 +26,7 @@ $b-pink: #FF73E9;
     font-family: $family;
 }
 
-@import 'header', 'gamefi', 'games', 'units', 'benefits';
+@import 'header', 'gamefi', 'games', 'units', 'benefits', 'footer';
 
 body{
     background-color: rgb(17, 17, 17);
@@ -39,4 +39,10 @@ body{
     position: relative;
     overflow-x: hidden;
 
+}
+
+.looper-bg{
+    background-color: $dark-gray;
+    background-image: url('/images/looper-bg.svg');
+    background-repeat: no-repeat;
 }

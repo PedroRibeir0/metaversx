@@ -297,7 +297,8 @@ header .menu-container .menu-list .menu-opt:hover {
 }
 
 .units {
-  margin-top: 120px;
+  margin-top: 70px;
+  padding-top: 60px;
   margin-bottom: 70px;
   display: flex;
   flex-direction: column;
@@ -327,7 +328,7 @@ header .menu-container .menu-list .menu-opt:hover {
   width: -moz-max-content;
   width: max-content;
   padding: 30px 20px;
-  background-color: rgba(50, 50, 50, 0.8);
+  background-color: rgba(50, 50, 50, 0.87);
   gap: 10px;
 }
 .units .cards-container .card .card-image {
@@ -378,6 +379,7 @@ header .menu-container .menu-list .menu-opt:hover {
   }
 }
 .benefits {
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -385,12 +387,14 @@ header .menu-container .menu-list .menu-opt:hover {
   gap: 20px;
 }
 .benefits h2 {
+  margin-bottom: 8px;
   font-size: 22px;
   font-weight: 700;
   color: #ffffff;
   font-family: "Inter", sans-serif;
 }
 .benefits .up-comp {
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -399,19 +403,23 @@ header .menu-container .menu-list .menu-opt:hover {
   color: #c9c9c9;
   font-family: "Montserrat", sans-serif;
 }
+.benefits .up-comp span.set {
+  color: #ffffff;
+}
 .benefits .benefits-info {
-  padding: 24.811px 14px 14.026px 19.183px;
+  background-color: rgba(50, 50, 50, 0.87);
+  position: relative;
+  padding: 24px 14px 14px 19px;
   display: flex;
-  background-color: rgba(50, 50, 50, 0.8);
-  width: 93%;
-  gap: 5px;
+  width: 100%;
+  gap: 8px;
 }
 .benefits .benefits-info ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
   list-style: none;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 500;
   color: #c9c9c9;
   font-family: "Montserrat", sans-serif;
@@ -420,7 +428,7 @@ header .menu-container .menu-list .menu-opt:hover {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 60px;
+  height: 70px;
 }
 .benefits .benefits-info ul li:first-child {
   margin-top: 20px;
@@ -429,19 +437,21 @@ header .menu-container .menu-list .menu-opt:hover {
   flex-basis: 25%;
 }
 .benefits .benefits-info .game li, .benefits .benefits-info .chance li, .benefits .benefits-info .all-time-profit li {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
 }
 .benefits .benefits-info .chance {
   flex-basis: 19%;
+  display: flex;
+  align-items: center;
 }
 .benefits .benefits-info .noted {
   flex-basis: 40%;
 }
 .benefits .benefits-info .noted li {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 300;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
@@ -454,9 +464,9 @@ header .menu-container .menu-list .menu-opt:hover {
 }
 .benefits .benefits-info .game li .ball {
   position: relative;
-  top: 5px;
-  width: 4px;
-  height: 4px;
+  top: 3px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: red;
 }
@@ -479,6 +489,105 @@ header .menu-container .menu-list .menu-opt:hover {
   background-color: #FF73E9;
 }
 
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer .community {
+  width: 93%;
+  background-image: url("/images/community-bg.svg");
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 0;
+}
+footer .community h2 {
+  margin-bottom: 25px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+footer .community .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+footer .community .buttons button {
+  width: 75%;
+  background-color: #FF9C00;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  padding: 11px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+footer .community .buttons button:hover {
+  background-color: #ffac29;
+}
+footer .community .buttons button:active {
+  transform: scale(0.993);
+}
+footer .meta-rights {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(127, 127, 127, 0.87);
+  padding-top: 18px;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #c9c9c9;
+  font-family: "Montserrat", sans-serif;
+}
+footer .footer-list {
+  margin-top: 18px;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 22px 30px;
+  border-top: 1px solid rgba(127, 127, 127, 0.87);
+  border-bottom: 1px solid rgba(127, 127, 127, 0.87);
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+footer .footer-list li {
+  cursor: pointer;
+}
+footer .social-icons {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 18px 17px 40px 17px;
+}
+footer .social-icons li {
+  cursor: pointer;
+}
+footer .social-icons li img {
+  width: 30px;
+}
+
 body {
   background-color: rgb(17, 17, 17);
   height: 100vh;
@@ -488,4 +597,10 @@ body {
   width: 100%;
   position: relative;
   overflow-x: hidden;
+}
+
+.looper-bg {
+  background-color: #1D1D1D;
+  background-image: url("/images/looper-bg.svg");
+  background-repeat: no-repeat;
 }/*# sourceMappingURL=home.css.map */

@@ -1,11 +1,15 @@
+import { useState } from "react"
 
 export default function Benefits() {
-  return (
+
+    const [benefits, setBenefits] = useState('upcoming')
+
+    return (
     <section className="benefits">
         <h2>Scholarship Benefit</h2>
         <div className="up-comp">
-            <span>Upcoming</span>
-            <span>Completed</span>
+            <span className="">Upcoming</span>
+            <span className="">Completed</span>
         </div>
         <div className="benefits-info">
             <ul className="game">Game
@@ -29,7 +33,7 @@ export default function Benefits() {
                     return <li>{`${item}%`}</li>
                 })}
             </ul>
-            <ul className="all-time-profit">All Time Profit
+            <ul className="all-time-profit">Profit
                 {[309000, 1800, 112900, 901, 59091, 98000].map(item=>{
                     return <li>{`${item} BTC`}</li>
                 })}

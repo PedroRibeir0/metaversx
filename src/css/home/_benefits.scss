@@ -1,4 +1,5 @@
 .benefits{
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,23 +7,30 @@
     gap: 20px;
 
     h2{
+        margin-bottom: 8px;
         @include font(22px, 700, $white, $inter)
     }
-
+    
     .up-comp{
+        margin-bottom: 15px;
         display: flex;
         align-items: center;
         gap: 20px;
+
+        span.set{
+            color: $white;
+        }
+
         @include font(13px, 500, $light-gray, $montserrat)
     }
 
     .benefits-info {
-        padding: 24.811px 14px 14.026px 19.183px;
-        display: flex;
-        // grid-template-columns: repeat(4, 1fr);
         background-color: $trans-gray;
-        width: 93%;
-        gap: 5px;
+        position: relative;
+        padding: 24px 14px 14px 19px;
+        display: flex;
+        width: 100%;
+        gap: 8px;
         
         ul{
             display: flex;
@@ -34,30 +42,32 @@
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-start;
-                height: 60px;
+                height: 70px;
 
                 &:first-child{
                     margin-top: 20px;
                 }
             }
-            @include font(10px, 500, $light-gray, $montserrat)
+            @include font(13px, 500, $light-gray, $montserrat)
         }
 
         .game, .chance, .all-time-profit{
             flex-basis: 25%;
             li{
-                @include font(10px, 700, $white, $montserrat)
+                @include font(12px, 700, $white, $montserrat)
             }
         }
 
         .chance{
             flex-basis: 19%;
+            display: flex;
+            align-items: center;
         }
 
         .noted{
             flex-basis: 40%;
             li{
-                @include font(9px, 300, $white, $montserrat)
+                @include font(11px, 300, $white, $montserrat)
             }
         }
 
@@ -69,9 +79,9 @@
                 gap: 3px;
                 .ball{
                     position: relative;
-                    top: 5px;
-                    width: 4px;
-                    height: 4px;
+                    top: 3px;
+                    width: 6px;
+                    height: 6px;
                     border-radius: 50%;
                     background-color: red;
                 }
