@@ -52,22 +52,29 @@ export default function Units() {
     setSelected(selected + 1);
   }
 
+  function changeCardSelected(e){
+    let id = Number(e.currentTarget.id)
+    setSelected(id)
+  }
+
   const reorderedUnitsList = [
-      UnitsList.filter(item => item.pos !== selected)[0],
-      UnitsList.filter(item => item.pos !== selected)[1],
-      UnitsList.find(item => item.pos === selected),
-      UnitsList.filter(item => item.pos !== selected)[2],
-      UnitsList.filter(item => item.pos !== selected)[3],
+    UnitsList.filter(item => item.pos !== selected)[0],
+    UnitsList.filter(item => item.pos !== selected)[1],
+    UnitsList.find(item => item.pos === selected),
+    UnitsList.filter(item => item.pos !== selected)[2],
+    UnitsList.filter(item => item.pos !== selected)[3],
   ];
 
   return (
     <section className="units">
       <h2>Our Units</h2>
-      <ul className="cards-container">
+      <ul className="cards-container ">
         {reorderedUnitsList.map((item) => (
           <li
             className={`card ${item.pos === selected ? 'selected' : ''}`}
+            id={item.pos}
             key={item.pos}
+            onClick={changeCardSelected}
           >
             <img src={item.image} alt={item.name} className="card-image" />
             <div className="player">
@@ -81,14 +88,6 @@ export default function Units() {
           </li>
         ))}
       </ul>
-      <div className="buttons">
-        <button id="left" onClick={handleLeft}>
-          <img src="/images/arrow-icon.svg" alt="" />
-        </button>
-        <button id="right" onClick={handleRight}>
-          <img src="/images/arrow-icon.svg" alt="" />
-        </button>
-      </div>
     </section>
   );
 }

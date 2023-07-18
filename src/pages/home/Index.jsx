@@ -5,6 +5,7 @@ import Header from './Header'
 import Gamefi from './Gamefi'
 import Games from './Games'
 import Units from './Units'
+import Benefits from './Benefits'
 
 
 
@@ -15,6 +16,7 @@ export default function Index() {
         <Gamefi/>
         <Games/>
         <Units/>
+        <Benefits/>
     </div>
   )
 }

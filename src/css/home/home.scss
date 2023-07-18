@@ -26,7 +26,7 @@ $b-pink: #FF73E9;
     font-family: $family;
 }
 
-@import 'header', 'gamefi', 'games', 'units';
+@import 'header', 'gamefi', 'games', 'units', 'benefits';
 
 body{
     background-color: rgb(17, 17, 17);
@@ -38,4 +38,5 @@ body{
     width: 100%;
     position: relative;
     overflow-x: hidden;
+
 }

@@ -73,7 +73,8 @@ header .menu-container .menu-list {
   color: #1D1D1D;
   font-family: "Montserrat", sans-serif;
 }
-header .menu-container .menu-list li:hover {
+header .menu-container .menu-list .menu-opt:hover {
+  cursor: pointer;
   color: #7d7d7d;
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -139,7 +140,7 @@ header .menu-container .menu-list li:hover {
   text-align: center;
   line-height: normal;
   text-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.05);
-  font-size: 31px;
+  font-size: 29px;
   font-weight: 700;
   color: #ffffff;
   font-family: "Inter", sans-serif;
@@ -266,7 +267,7 @@ header .menu-container .menu-list li:hover {
 }
 .games {
   position: absolute;
-  top: 700px;
+  top: 730px;
   left: -10px;
   width: 110%;
   background-color: #CB7C00;
@@ -297,7 +298,7 @@ header .menu-container .menu-list li:hover {
 
 .units {
   margin-top: 120px;
-  padding-bottom: 150px;
+  margin-bottom: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -318,6 +319,7 @@ header .menu-container .menu-list li:hover {
   gap: 10px;
 }
 .units .cards-container .card {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -359,33 +361,122 @@ header .menu-container .menu-list li:hover {
   width: 20px;
   transform: rotate(90deg);
 }
+.units .cards-container .card:nth-child(1), .units .cards-container .card:nth-child(5) {
+  display: none;
+}
 .units .cards-container .card.selected {
   border: 3px solid #FF9C00;
+  animation: cardFade 0.2s ease-in-out;
 }
 .units .cards-container .card.selected .card-image {
-  width: 200px;
+  width: 180px;
 }
-.units .buttons {
-  margin-top: 30px;
+
+@keyframes cardFade {
+  0% {
+    transform: scale(0.9);
+  }
+}
+.benefits {
   display: flex;
-  width: 60%;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
 }
-.units .buttons button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
+.benefits h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
 }
-.units .buttons button img {
-  width: 40px;
+.benefits .up-comp {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #c9c9c9;
+  font-family: "Montserrat", sans-serif;
 }
-.units .buttons #left {
-  transform: rotate(-90deg);
+.benefits .benefits-info {
+  padding: 24.811px 14px 14.026px 19.183px;
+  display: flex;
+  background-color: rgba(50, 50, 50, 0.8);
+  width: 93%;
+  gap: 5px;
 }
-.units .buttons #right {
-  transform: rotate(90deg);
+.benefits .benefits-info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  font-size: 10px;
+  font-weight: 500;
+  color: #c9c9c9;
+  font-family: "Montserrat", sans-serif;
+}
+.benefits .benefits-info ul li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 60px;
+}
+.benefits .benefits-info ul li:first-child {
+  margin-top: 20px;
+}
+.benefits .benefits-info .game, .benefits .benefits-info .chance, .benefits .benefits-info .all-time-profit {
+  flex-basis: 25%;
+}
+.benefits .benefits-info .game li, .benefits .benefits-info .chance li, .benefits .benefits-info .all-time-profit li {
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+.benefits .benefits-info .chance {
+  flex-basis: 19%;
+}
+.benefits .benefits-info .noted {
+  flex-basis: 40%;
+}
+.benefits .benefits-info .noted li {
+  font-size: 9px;
+  font-weight: 300;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+.benefits .benefits-info .game li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 3px;
+}
+.benefits .benefits-info .game li .ball {
+  position: relative;
+  top: 5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: red;
+}
+.benefits .benefits-info .game li .gray {
+  background-color: #F4F4F4;
+}
+.benefits .benefits-info .game li .green {
+  background-color: #B6D600;
+}
+.benefits .benefits-info .game li .orange {
+  background-color: #FF9C00;
+}
+.benefits .benefits-info .game li .dark-blue {
+  background-color: #130FCE;
+}
+.benefits .benefits-info .game li .light-blue {
+  background-color: #00B2FF;
+}
+.benefits .benefits-info .game li .pink {
+  background-color: #FF73E9;
 }
 
 body {

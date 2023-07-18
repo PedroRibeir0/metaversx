@@ -75,7 +75,8 @@ header{
             align-items: center;
             gap: 30px;
 
-            li:hover{
+            .menu-opt:hover{
+                cursor: pointer;
                 color: darken($color: $light-gray, $amount: 30);
                 text-decoration: underline;
                 text-decoration-thickness: 2px;
