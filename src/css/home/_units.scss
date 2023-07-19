@@ -6,10 +6,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    @media screen and (min-width: 1024px){
+        padding-top: 120px;
+    }
 
     h2{
         margin-bottom: 50px;
-        @include font(30px, 700, $white, $inter)
+        @include font(30px, 700, $white, $inter);
+
+        @media screen and (min-width: 1024px){
+            	font-size: 45px;
+        }
     }
 
     .cards-container{
@@ -29,9 +37,15 @@
             padding: 30px 20px ;
             background-color: $trans-gray;
             gap: 10px;
+            @media screen and (min-width: 1024px){
+        
+            }
 
             .card-image{
                 width: 130px;
+                @media screen and (min-width: 1024px){
+                    width: 150px;
+                }
             }
 
             .player{
@@ -39,12 +53,19 @@
                 justify-content: flex-start;
                 align-items: center;
                 gap: 5px;
+                @include font(10px, 500, $white, $montserrat);
+
+                @media screen and (min-width: 1024px){
+                    font-size: 12px;
+                }
 
                 .player-photo{
                     width: 20px;
                     border-radius: 50%;
+                    @media screen and (min-width: 1024px){
+                        width: 25px;
+                    }
                 }
-                @include font(10px, 500, $white, $montserrat)
             }
 
             .card-name{
@@ -52,18 +73,27 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                @include font(13px, 700, $white, $inter);
+                @media screen and (min-width: 1024px){
+                    font-size: 15px;
+                }
 
                 .arrow-icon{
-                    width: 20px;
+                    display: none;
+                    width: 35px;
                     transform: rotate(90deg);
+                    @media screen and (min-width: 1024px){
+                        width: 40px;
+                    }
                 }
-                @include font(13px, 700, $white, $inter)
             }
 
             &:nth-child(1), &:nth-child(5){
                 display: none;
-            }
-            
+                @media screen and (min-width: 1024px){
+                    display: flex;
+                }
+            }   
         }
 
         .card.selected{
@@ -71,6 +101,12 @@
             animation: cardFade .2s ease-in-out;
             .card-image{
                 width: 180px;
+                @media screen and (min-width: 1024px){
+                    width: 200px;
+                }
+            }
+            .arrow-icon{
+                display: block;
             }
         }
     }

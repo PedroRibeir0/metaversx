@@ -18,6 +18,11 @@ header .menu-icon {
   align-items: center;
   gap: 8px;
 }
+@media screen and (min-width: 1024px) {
+  header .menu-icon {
+    display: none;
+  }
+}
 header .menu-icon .line {
   width: 26px;
   height: 3px;
@@ -40,12 +45,32 @@ header .logo {
   width: 190px;
   position: relative;
   top: 3px;
-  z-index: 12;
+  z-index: 10;
   transition: filter 0.4s linear;
 }
 header .wallet-icon {
   width: 21px;
   cursor: pointer;
+}
+header .connect-wallet-button {
+  background-color: transparent;
+  outline: none;
+  display: inline-flex;
+  padding: 8px 25px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 40px;
+  border: 2px solid #FF9C00;
+  animation: invisible 0.26s;
+  font-size: 15px;
+  font-weight: 500;
+  color: #FF9C00;
+  font-family: "Montserrat", sans-serif;
+}
+header .connect-wallet-button:hover {
+  background-color: #FF9C00;
+  color: #7700A1;
 }
 header .menu-container {
   z-index: 11;
@@ -61,6 +86,19 @@ header .menu-container {
   align-items: flex-start;
   animation: showMenu 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+@media screen and (min-width: 1024px) {
+  header .menu-container {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    background-color: transparent;
+    height: -moz-max-content;
+    height: max-content;
+    padding-top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 header .menu-container .menu-list {
   list-style: none;
   display: flex;
@@ -72,6 +110,16 @@ header .menu-container .menu-list {
   font-weight: 500;
   color: #1D1D1D;
   font-family: "Montserrat", sans-serif;
+}
+@media screen and (min-width: 1024px) {
+  header .menu-container .menu-list {
+    flex-direction: row;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+  }
 }
 header .menu-container .menu-list .menu-opt:hover {
   cursor: pointer;
@@ -123,6 +171,11 @@ header .menu-container .menu-list .menu-opt:hover {
     transform: translateX(-100%);
   }
 }
+@keyframes invisible {
+  0%, 90% {
+    opacity: 0;
+  }
+}
 .gamefi {
   background-image: url("../../../public//images/mask-bg.svg");
   background-position: -500px -400px;
@@ -136,6 +189,13 @@ header .menu-container .menu-list .menu-opt:hover {
   justify-content: flex-start;
   align-items: center;
 }
+@media screen and (min-width: 1024px) {
+  .gamefi {
+    height: 1000px;
+    background-position: -800px -800px;
+    background-size: 3400px 3400px;
+  }
+}
 .gamefi h1 {
   text-align: center;
   line-height: normal;
@@ -145,6 +205,18 @@ header .menu-container .menu-list .menu-opt:hover {
   color: #ffffff;
   font-family: "Inter", sans-serif;
 }
+@media screen and (min-width: 645px) {
+  .gamefi h1 {
+    width: 80%;
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gamefi h1 {
+    width: 70%;
+    font-size: 70px;
+  }
+}
 .gamefi .g-image {
   margin-top: -20px;
   display: flex;
@@ -152,16 +224,40 @@ header .menu-container .menu-list .menu-opt:hover {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 1024px) {
+  .gamefi .g-image {
+    order: 3;
+    margin-top: 10px;
+  }
+}
 .gamefi .g-image .statue {
   z-index: 10;
   animation: floating 3.1s infinite ease-in-out;
+}
+@media screen and (min-width: 1024px) {
+  .gamefi .g-image .statue {
+    width: 280px;
+  }
 }
 .gamefi .g-image .pedestal {
   position: relative;
   bottom: 195px;
   z-index: 9;
 }
+@media screen and (min-width: 645px) {
+  .gamefi .g-image .pedestal {
+    width: 290px;
+    bottom: 210px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gamefi .g-image .pedestal {
+    width: 450px;
+    bottom: 330px;
+  }
+}
 .gamefi .g-image .earn-learn {
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,12 +266,28 @@ header .menu-container .menu-list .menu-opt:hover {
   border: 2.5px solid #FF9C00;
   border-radius: 50px;
   position: absolute;
-  left: 15px;
+  left: calc(50% - 217px);
   top: 210px;
+}
+@media screen and (min-width: 645px) {
+  .gamefi .g-image .earn-learn {
+    top: 250px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gamefi .g-image .earn-learn {
+    top: 480px;
+    left: calc(50% - 285px);
+  }
 }
 .gamefi .g-image .earn-learn .yellow-circle {
   width: 53px;
-  transition: all 15s linear;
+}
+@media screen and (min-width: 1024px) {
+  .gamefi .g-image .earn-learn .yellow-circle {
+    width: 70px;
+    margin-bottom: 10px;
+  }
 }
 .gamefi .g-image .earn-learn .gamers-amount {
   font-size: 19px;
@@ -195,8 +307,20 @@ header .menu-container .menu-list .menu-opt:hover {
   width: 180px;
   position: absolute;
   z-index: 10;
-  left: 42px;
+  left: calc(50% - 190px);
   top: 281px;
+}
+@media screen and (min-width: 645px) {
+  .gamefi .g-image .yellow-line {
+    top: 320px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gamefi .g-image .yellow-line {
+    width: 250px;
+    top: 560px;
+    left: calc(50% - 250px);
+  }
 }
 .gamefi .g-image .ld {
   width: 140px;
@@ -205,15 +329,69 @@ header .menu-container .menu-list .menu-opt:hover {
   left: 1px;
   top: 315px;
 }
+@media screen and (min-width: 645px) {
+  .gamefi .g-image .ld {
+    top: 400px;
+    width: 250px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gamefi .g-image .ld {
+    opacity: 0.5;
+    width: 320px;
+    left: inherit;
+    right: 0;
+    top: 600px;
+  }
+}
 .gamefi .g-image .gui {
   position: absolute;
   right: 0;
   top: 430px;
   z-index: 8;
 }
-.gamefi .join-now-button {
+@media screen and (min-width: 645px) {
+  .gamefi .g-image .gui {
+    top: 280px;
+    width: 270px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gamefi .g-image .gui {
+    right: inherit;
+    left: 0;
+    width: 400px;
+    opacity: 0.5;
+    top: 400px;
+    z-index: 1;
+  }
+}
+.gamefi .gamefi-buttons {
+  margin-top: -150px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  z-index: 3;
+}
+@media screen and (min-width: 645px) {
+  .gamefi .gamefi-buttons {
+    flex-direction: row;
+    margin-top: -190px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gamefi .gamefi-buttons {
+    order: 2;
+    margin-top: 50px;
+    width: 60%;
+    gap: 50px;
+  }
+}
+.gamefi .gamefi-buttons .join-now-button {
   cursor: pointer;
-  margin-top: -200px;
   background-color: #FF9C00;
   border: none;
   outline: none;
@@ -226,13 +404,24 @@ header .menu-container .menu-list .menu-opt:hover {
   color: black;
   font-family: "Montserrat", sans-serif;
 }
-.gamefi .join-now-button:hover {
+@media screen and (min-width: 645px) {
+  .gamefi .gamefi-buttons .join-now-button {
+    width: 35%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gamefi .gamefi-buttons .join-now-button {
+    width: 30%;
+  }
+}
+.gamefi .gamefi-buttons .join-now-button:hover {
   background-color: #ffb033;
 }
-.gamefi .join-now-button:active {
+.gamefi .gamefi-buttons .join-now-button:active {
   transform: scale(0.994);
 }
-.gamefi .how-it-works-button {
+.gamefi .gamefi-buttons .how-it-works-button {
+  width: 100%;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -241,16 +430,25 @@ header .menu-container .menu-list .menu-opt:hover {
   background-color: transparent;
   border: none;
   outline: none;
-  margin-top: 30px;
   font-size: 19px;
   font-weight: 600;
   color: #FF9C00;
   font-family: "Montserrat", sans-serif;
 }
-.gamefi .how-it-works-button:hover {
+@media screen and (min-width: 645px) {
+  .gamefi .gamefi-buttons .how-it-works-button {
+    width: 35%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gamefi .gamefi-buttons .how-it-works-button {
+    width: 30%;
+  }
+}
+.gamefi .gamefi-buttons .how-it-works-button:hover {
   color: #ffb033;
 }
-.gamefi .how-it-works-button:active {
+.gamefi .gamefi-buttons .how-it-works-button:active {
   transform: scale(0.994);
 }
 
@@ -277,9 +475,15 @@ header .menu-container .menu-list .menu-opt:hover {
   padding-top: 10px;
   padding-bottom: 20px;
   transform: rotate(2deg);
+  z-index: 10;
+}
+@media screen and (min-width: 1024px) {
+  .games {
+    top: 950px;
+    transform: rotate(1deg);
+  }
 }
 .games .games-container {
-  overflow: hidden;
   position: relative;
   top: 12px;
   left: -10px;
@@ -292,8 +496,20 @@ header .menu-container .menu-list .menu-opt:hover {
   padding: 45px 0;
   transform: rotate(-4deg);
 }
+@media screen and (min-width: 1024px) {
+  .games .games-container {
+    transform: rotate(-2deg);
+    gap: 120px;
+    padding: 35px 0;
+  }
+}
 .games .games-container .game-logo {
   height: 29px;
+}
+@media screen and (min-width: 1024px) {
+  .games .games-container .game-logo {
+    height: 53px;
+  }
 }
 
 .units {
@@ -305,12 +521,22 @@ header .menu-container .menu-list .menu-opt:hover {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 1024px) {
+  .units {
+    padding-top: 120px;
+  }
+}
 .units h2 {
   margin-bottom: 50px;
   font-size: 30px;
   font-weight: 700;
   color: #ffffff;
   font-family: "Inter", sans-serif;
+}
+@media screen and (min-width: 1024px) {
+  .units h2 {
+    font-size: 45px;
+  }
 }
 .units .cards-container {
   display: flex;
@@ -334,6 +560,11 @@ header .menu-container .menu-list .menu-opt:hover {
 .units .cards-container .card .card-image {
   width: 130px;
 }
+@media screen and (min-width: 1024px) {
+  .units .cards-container .card .card-image {
+    width: 150px;
+  }
+}
 .units .cards-container .card .player {
   display: flex;
   justify-content: flex-start;
@@ -344,9 +575,19 @@ header .menu-container .menu-list .menu-opt:hover {
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
 }
+@media screen and (min-width: 1024px) {
+  .units .cards-container .card .player {
+    font-size: 12px;
+  }
+}
 .units .cards-container .card .player .player-photo {
   width: 20px;
   border-radius: 50%;
+}
+@media screen and (min-width: 1024px) {
+  .units .cards-container .card .player .player-photo {
+    width: 25px;
+  }
 }
 .units .cards-container .card .card-name {
   width: 100%;
@@ -358,12 +599,28 @@ header .menu-container .menu-list .menu-opt:hover {
   color: #ffffff;
   font-family: "Inter", sans-serif;
 }
+@media screen and (min-width: 1024px) {
+  .units .cards-container .card .card-name {
+    font-size: 15px;
+  }
+}
 .units .cards-container .card .card-name .arrow-icon {
-  width: 20px;
+  display: none;
+  width: 35px;
   transform: rotate(90deg);
+}
+@media screen and (min-width: 1024px) {
+  .units .cards-container .card .card-name .arrow-icon {
+    width: 40px;
+  }
 }
 .units .cards-container .card:nth-child(1), .units .cards-container .card:nth-child(5) {
   display: none;
+}
+@media screen and (min-width: 1024px) {
+  .units .cards-container .card:nth-child(1), .units .cards-container .card:nth-child(5) {
+    display: flex;
+  }
 }
 .units .cards-container .card.selected {
   border: 3px solid #FF9C00;
@@ -371,6 +628,14 @@ header .menu-container .menu-list .menu-opt:hover {
 }
 .units .cards-container .card.selected .card-image {
   width: 180px;
+}
+@media screen and (min-width: 1024px) {
+  .units .cards-container .card.selected .card-image {
+    width: 200px;
+  }
+}
+.units .cards-container .card.selected .arrow-icon {
+  display: block;
 }
 
 @keyframes cardFade {
@@ -393,6 +658,11 @@ header .menu-container .menu-list .menu-opt:hover {
   color: #ffffff;
   font-family: "Inter", sans-serif;
 }
+@media screen and (min-width: 645px) {
+  .benefits h2 {
+    font-size: 25px;
+  }
+}
 .benefits .up-comp {
   margin-bottom: 15px;
   display: flex;
@@ -405,6 +675,11 @@ header .menu-container .menu-list .menu-opt:hover {
 }
 .benefits .up-comp span.set {
   color: #ffffff;
+}
+@media screen and (min-width: 645px) {
+  .benefits .up-comp {
+    font-size: 15px;
+  }
 }
 .benefits .benefits-info {
   background-color: rgba(50, 50, 50, 0.87);
@@ -419,19 +694,24 @@ header .menu-container .menu-list .menu-opt:hover {
   flex-direction: column;
   gap: 10px;
   list-style: none;
-  font-size: 13px;
-  font-weight: 500;
-  color: #c9c9c9;
-  font-family: "Montserrat", sans-serif;
 }
 .benefits .benefits-info ul li {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   height: 70px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #c9c9c9;
+  font-family: "Montserrat", sans-serif;
 }
 .benefits .benefits-info ul li:first-child {
   margin-top: 20px;
+}
+@media screen and (min-width: 645px) {
+  .benefits .benefits-info ul {
+    font-size: 15px;
+  }
 }
 .benefits .benefits-info .game, .benefits .benefits-info .chance, .benefits .benefits-info .all-time-profit {
   flex-basis: 25%;
@@ -441,6 +721,11 @@ header .menu-container .menu-list .menu-opt:hover {
   font-weight: 700;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
+}
+@media screen and (min-width: 645px) {
+  .benefits .benefits-info .game li, .benefits .benefits-info .chance li, .benefits .benefits-info .all-time-profit li {
+    font-size: 14px;
+  }
 }
 .benefits .benefits-info .chance {
   flex-basis: 19%;
@@ -456,6 +741,11 @@ header .menu-container .menu-list .menu-opt:hover {
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
 }
+@media screen and (min-width: 645px) {
+  .benefits .benefits-info .noted li {
+    font-size: 13px;
+  }
+}
 .benefits .benefits-info .game li {
   display: flex;
   justify-content: flex-start;
@@ -468,7 +758,13 @@ header .menu-container .menu-list .menu-opt:hover {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: red;
+}
+@media screen and (min-width: 645px) {
+  .benefits .benefits-info .game li .ball {
+    width: 9px;
+    height: 9px;
+    top: 4px;
+  }
 }
 .benefits .benefits-info .game li .gray {
   background-color: #F4F4F4;
@@ -487,6 +783,11 @@ header .menu-container .menu-list .menu-opt:hover {
 }
 .benefits .benefits-info .game li .pink {
   background-color: #FF73E9;
+}
+@media screen and (min-width: 645px) {
+  .benefits .benefits-info .game li {
+    gap: 5px;
+  }
 }
 
 footer {
@@ -603,4 +904,11 @@ body {
   background-color: #1D1D1D;
   background-image: url("/images/looper-bg.svg");
   background-repeat: no-repeat;
+  position: relative;
+}
+@media screen and (min-width: 489px) {
+  .looper-bg {
+    background-image: url("/images/looper-bg-desktop.svg");
+    background-position: -500px -300px;
+  }
 }/*# sourceMappingURL=home.css.map */

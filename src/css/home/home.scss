@@ -45,4 +45,9 @@ body{
     background-color: $dark-gray;
     background-image: url('/images/looper-bg.svg');
     background-repeat: no-repeat;
+    position: relative;
+    @media screen and (min-width: 489px) {
+        background-image: url('/images/looper-bg-desktop.svg');
+        background-position: -500px -300px;
+    }
 }

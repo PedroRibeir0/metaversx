@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Units() {
   const UnitsList = [
@@ -33,37 +33,33 @@ export default function Units() {
       player: '/images/player.svg'
     }
   ];
-  
-  const [selected, setSelected] = useState(2);
+  const [isMobile, setIsMobile] = useState(false);
 
-  function handleLeft() {
-    if (selected === 1){
-        setSelected(5)
-        return
+  useEffect(() => {
+    function handleResize(){
+      setIsMobile(window.innerWidth < 645);
     };
-    setSelected(selected - 1);
-  }
 
-  function handleRight() {
-    if (selected === 5){
-        setSelected(1)
-        return
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
     };
-    setSelected(selected + 1);
-  }
+  }, []);
+  const [selected, setSelected] = useState(3);
 
-  function changeCardSelected(e){
+  function changeSelectedCard(e){
     let id = Number(e.currentTarget.id)
     setSelected(id)
   }
 
-  const reorderedUnitsList = [
+  const reorderedUnitsList = isMobile ? [
     UnitsList.filter(item => item.pos !== selected)[0],
     UnitsList.filter(item => item.pos !== selected)[1],
     UnitsList.find(item => item.pos === selected),
     UnitsList.filter(item => item.pos !== selected)[2],
     UnitsList.filter(item => item.pos !== selected)[3],
-  ];
+  ] : UnitsList;
 
   return (
     <section className="units">
@@ -74,7 +70,7 @@ export default function Units() {
             className={`card ${item.pos === selected ? 'selected' : ''}`}
             id={item.pos}
             key={item.pos}
-            onClick={changeCardSelected}
+            onClick={changeSelectedCard}
           >
             <img src={item.image} alt={item.name} className="card-image" />
             <div className="player">

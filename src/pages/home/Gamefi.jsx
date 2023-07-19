@@ -15,11 +15,13 @@ export default function Gamefi() {
             <img src="/images/main-images.svg" alt="man" className="statue"/>
             <img src="/images/pedestal.svg" alt="pedestal" className="pedestal"/>
         </div>
-        <button className="join-now-button">Join Now</button>
-        <button className="how-it-works-button">
-            <img src="/images/play-icon.svg" alt="play-icon" />
-            <span>How it Works</span>
-        </button>
+        <div className="gamefi-buttons">
+          <button className="join-now-button">Join Now</button>
+          <button className="how-it-works-button">
+              <img src="/images/play-icon.svg" alt="play-icon" />
+              <span>How it Works</span>
+          </button>
+        </div>
     </section>
   )
 }

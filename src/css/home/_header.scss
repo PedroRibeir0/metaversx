@@ -16,6 +16,10 @@ header{
         align-items: center;
         gap: 8px;
 
+        @media screen and (min-width: 1024px){
+            display: none;
+        }
+
         .line{
             width: 26px;
             height: 3px;
@@ -44,13 +48,34 @@ header{
         width: 190px;
         position: relative;
         top: 3px;
-        z-index: 12;
+        z-index: 10;
         transition: filter 0.4s linear;
     }
 
     .wallet-icon{
         width: 21px;
         cursor: pointer;
+    }
+
+    .connect-wallet-button{
+        background-color: transparent;
+        outline: none;
+        display: inline-flex;
+        padding: 8px 25px;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        border-radius: 40px;
+        border: 2px solid $orange;
+        animation: invisible .26s;
+        @include font(15px, 500, $orange, $montserrat);
+        
+        
+        &:hover{
+            background-color: $orange;
+            color: $purple;
+        }
+        
     }
 
     .menu-container{
@@ -67,6 +92,17 @@ header{
         align-items: flex-start;
         animation: showMenu .35s cubic-bezier(0.215, 0.610, 0.355, 1);
 
+        @media screen and (min-width: 1024px){
+            display: flex;
+            position: absolute;
+            z-index: 10;
+            background-color: transparent;
+            height: max-content;
+            padding-top: 0; 
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         .menu-list{
             list-style: none;
             display: flex;
@@ -74,6 +110,12 @@ header{
             justify-content: flex-start;
             align-items: center;
             gap: 30px;
+            @include font(24px, 500, $dark-gray, $montserrat);
+            @media screen and (min-width: 1024px){
+                flex-direction: row;
+                justify-content: center;
+                @include font(14px, 500, $white, $montserrat)
+            }
 
             .menu-opt:hover{
                 cursor: pointer;
@@ -81,8 +123,6 @@ header{
                 text-decoration: underline;
                 text-decoration-thickness: 2px;
             }
-
-            @include font(24px, 500, $dark-gray, $montserrat)
         }
     }
 }
@@ -97,7 +137,6 @@ header{
         background-color: black;
     }
 }
-
 @keyframes closeLine2 {
     50%{
         transform: translateY(-6px);
@@ -133,5 +172,11 @@ header{
 @keyframes showMenu {
     0%{
         transform: translateX(-100%);
+    }
+}
+
+@keyframes invisible {
+    0%,90%{
+        opacity: 0;
     }
 }

@@ -38,6 +38,7 @@ footer{
                 justify-content: center;
                 align-items: center;
                 gap: 20px;
+                @include font(15px, 500, black, $montserrat);
 
                 &:hover{
                     background-color: lighten($color: $orange, $amount: 8);
@@ -47,7 +48,6 @@ footer{
                     transform: scale(0.993);
                 }
 
-                @include font(15px, 500, black, $montserrat)
             }
         }
     }
@@ -62,7 +62,7 @@ footer{
         border-top: 1px solid lighten($color: $trans-gray, $amount: 30);
         padding-top: 18px;
         gap: 12px;
-        @include font(14px, 300, $light-gray, $montserrat)
+        @include font(14px, 300, $light-gray, $montserrat);
     }
 
     .footer-list{
