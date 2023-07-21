@@ -84,6 +84,10 @@ export default function Units() {
           </li>
         ))}
       </ul>
+      <button className="see-all-button">
+        <span>See All</span>
+        <img src="/images/white-arrow.svg" alt="arrow" className="arrow"/>
+      </button>
     </section>
   );
 }

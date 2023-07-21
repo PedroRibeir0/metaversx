@@ -29,7 +29,7 @@ $b-pink: #FF73E9;
 @import 'header', 'gamefi', 'games', 'units', 'benefits', 'footer';
 
 body{
-    background-color: rgb(17, 17, 17);
+    background-color: $dark-gray;
     // background-color: white;
     height: 100vh;
 }
@@ -41,13 +41,24 @@ body{
 
 }
 
+.mask-bg{
+    background-image: url('../../../public//images/mask-bg.svg');
+    background-color: $purple;
+    background-position: -500px -400px;
+    position: relative;
+}
+
 .looper-bg{
     background-color: $dark-gray;
     background-image: url('/images/looper-bg.svg');
     background-repeat: no-repeat;
     position: relative;
+    
     @media screen and (min-width: 489px) {
         background-image: url('/images/looper-bg-desktop.svg');
-        background-position: -500px -300px;
+        // background-position: -500px -300px;
+        background-position: 50% -300px;
     }
 }
+
+

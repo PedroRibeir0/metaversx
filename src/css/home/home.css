@@ -1,16 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
 header {
+  max-width: 1440px;
+  left: 50%;
+  transform: translateX(-50%);
   position: absolute;
-  margin-top: 40px;
+  top: 40px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  z-index: 14;
 }
 header .menu-icon {
-  z-index: 12;
+  z-index: 16;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -29,23 +33,17 @@ header .menu-icon .line {
   background-color: #ffffff;
   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
 }
-header .menu-icon #line-1.menu-close {
+header .menu-icon .line-1.menu-close {
   animation: closeLine1 0.25s forwards ease-in;
 }
-header .menu-icon #line-2.menu-close {
+header .menu-icon .line-2.menu-close {
   animation: closeLine2 0.25s forwards ease-in;
-}
-header .menu-icon #line-1.menu-open {
-  animation: openLine1 0.25s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-header .menu-icon #line-2.menu-open {
-  animation: openLine2 0.25s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 header .logo {
   width: 190px;
   position: relative;
   top: 3px;
-  z-index: 10;
+  z-index: 0;
   transition: filter 0.4s linear;
 }
 header .wallet-icon {
@@ -72,9 +70,10 @@ header .connect-wallet-button:hover {
   background-color: #FF9C00;
   color: #7700A1;
 }
-header .menu-container {
-  z-index: 11;
+
+.menu-container {
   position: fixed;
+  z-index: 20;
   top: 0;
   left: 0;
   background-color: #ffffff;
@@ -87,7 +86,7 @@ header .menu-container {
   animation: showMenu 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 @media screen and (min-width: 1024px) {
-  header .menu-container {
+  .menu-container {
     display: flex;
     position: absolute;
     z-index: 10;
@@ -95,11 +94,12 @@ header .menu-container {
     height: -moz-max-content;
     height: max-content;
     padding-top: 0;
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
   }
 }
-header .menu-container .menu-list {
+.menu-container .menu-list {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -112,7 +112,7 @@ header .menu-container .menu-list {
   font-family: "Montserrat", sans-serif;
 }
 @media screen and (min-width: 1024px) {
-  header .menu-container .menu-list {
+  .menu-container .menu-list {
     flex-direction: row;
     justify-content: center;
     font-size: 14px;
@@ -121,11 +121,39 @@ header .menu-container .menu-list {
     font-family: "Montserrat", sans-serif;
   }
 }
-header .menu-container .menu-list .menu-opt:hover {
+.menu-container .menu-list .menu-opt:hover {
   cursor: pointer;
   color: #7d7d7d;
   text-decoration: underline;
   text-decoration-thickness: 2px;
+}
+.menu-container .menu-icon {
+  position: absolute;
+  top: 53px;
+  left: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+@media screen and (min-width: 1024px) {
+  .menu-container .menu-icon {
+    display: none;
+  }
+}
+.menu-container .menu-icon .line {
+  width: 26px;
+  height: 3px;
+  background-color: #ffffff;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+}
+.menu-container .menu-icon .line-1.menu-close {
+  animation: closeLine1 0.25s forwards ease-in;
+}
+.menu-container .menu-icon .line-2.menu-close {
+  animation: closeLine2 0.25s forwards ease-in;
 }
 
 @keyframes closeLine1 {
@@ -177,9 +205,9 @@ header .menu-container .menu-list .menu-opt:hover {
   }
 }
 .gamefi {
-  background-image: url("../../../public//images/mask-bg.svg");
-  background-position: -500px -400px;
-  background-color: #7700A1;
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
   width: 100%;
   height: 800px;
   padding: 20px;
@@ -208,7 +236,7 @@ header .menu-container .menu-list .menu-opt:hover {
 @media screen and (min-width: 645px) {
   .gamefi h1 {
     width: 80%;
-    font-size: 40px;
+    font-size: 50px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -266,12 +294,12 @@ header .menu-container .menu-list .menu-opt:hover {
   border: 2.5px solid #FF9C00;
   border-radius: 50px;
   position: absolute;
-  left: calc(50% - 217px);
-  top: 210px;
+  left: calc(50% - 179px);
+  top: 200px;
 }
 @media screen and (min-width: 645px) {
   .gamefi .g-image .earn-learn {
-    top: 250px;
+    top: 280px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -304,15 +332,15 @@ header .menu-container .menu-list .menu-opt:hover {
   margin-bottom: 15px;
 }
 .gamefi .g-image .yellow-line {
-  width: 180px;
+  width: 150px;
   position: absolute;
   z-index: 10;
-  left: calc(50% - 190px);
+  left: calc(50% - 150px);
   top: 281px;
 }
 @media screen and (min-width: 645px) {
   .gamefi .g-image .yellow-line {
-    top: 320px;
+    top: 360px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -464,6 +492,7 @@ header .menu-container .menu-list .menu-opt:hover {
   }
 }
 .games {
+  max-width: 2500px;
   position: absolute;
   top: 730px;
   left: -10px;
@@ -477,10 +506,16 @@ header .menu-container .menu-list .menu-opt:hover {
   transform: rotate(2deg);
   z-index: 10;
 }
+@media screen and (min-width: 645px) {
+  .games {
+    top: 750px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .games {
+    left: 50%;
+    transform: translateX(-50%) rotate(1deg);
     top: 950px;
-    transform: rotate(1deg);
   }
 }
 .games .games-container {
@@ -499,6 +534,7 @@ header .menu-container .menu-list .menu-opt:hover {
 @media screen and (min-width: 1024px) {
   .games .games-container {
     transform: rotate(-2deg);
+    left: 0;
     gap: 120px;
     padding: 35px 0;
   }
@@ -520,6 +556,11 @@ header .menu-container .menu-list .menu-opt:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@media screen and (min-width: 645px) {
+  .units {
+    padding-top: 80px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .units {
@@ -637,6 +678,35 @@ header .menu-container .menu-list .menu-opt:hover {
 .units .cards-container .card.selected .arrow-icon {
   display: block;
 }
+.units .see-all-button {
+  margin-top: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-size: 23px;
+  font-weight: 500;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+@media screen and (min-width: 1024px) {
+  .units .see-all-button {
+    font-size: 27px;
+  }
+}
+.units .see-all-button:hover {
+  gap: 20px;
+  text-shadow: 0 0 10px 10px black;
+}
+.units .arrow {
+  width: 30px;
+  filter: invert(100%);
+}
 
 @keyframes cardFade {
   0% {
@@ -650,6 +720,8 @@ header .menu-container .menu-list .menu-opt:hover {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .benefits h2 {
   margin-bottom: 8px;
@@ -661,6 +733,11 @@ header .menu-container .menu-list .menu-opt:hover {
 @media screen and (min-width: 645px) {
   .benefits h2 {
     font-size: 25px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .benefits h2 {
+    font-size: 42px;
   }
 }
 .benefits .up-comp {
@@ -689,11 +766,22 @@ header .menu-container .menu-list .menu-opt:hover {
   width: 100%;
   gap: 8px;
 }
+@media screen and (min-width: 1024px) {
+  .benefits .benefits-info {
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.1);
+    padding-top: 40px;
+    padding-left: 120px;
+  }
+}
 .benefits .benefits-info ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
   list-style: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
 }
 .benefits .benefits-info ul li {
   display: flex;
@@ -713,6 +801,11 @@ header .menu-container .menu-list .menu-opt:hover {
     font-size: 15px;
   }
 }
+@media screen and (min-width: 1024px) {
+  .benefits .benefits-info ul {
+    font-size: 16px;
+  }
+}
 .benefits .benefits-info .game, .benefits .benefits-info .chance, .benefits .benefits-info .all-time-profit {
   flex-basis: 25%;
 }
@@ -725,6 +818,11 @@ header .menu-container .menu-list .menu-opt:hover {
 @media screen and (min-width: 645px) {
   .benefits .benefits-info .game li, .benefits .benefits-info .chance li, .benefits .benefits-info .all-time-profit li {
     font-size: 14px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .benefits .benefits-info .game li, .benefits .benefits-info .chance li, .benefits .benefits-info .all-time-profit li {
+    font-size: 16px;
   }
 }
 .benefits .benefits-info .chance {
@@ -744,6 +842,11 @@ header .menu-container .menu-list .menu-opt:hover {
 @media screen and (min-width: 645px) {
   .benefits .benefits-info .noted li {
     font-size: 13px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .benefits .benefits-info .noted li {
+    font-size: 15px;
   }
 }
 .benefits .benefits-info .game li {
@@ -890,7 +993,7 @@ footer .social-icons li img {
 }
 
 body {
-  background-color: rgb(17, 17, 17);
+  background-color: #1D1D1D;
   height: 100vh;
 }
 
@@ -898,6 +1001,13 @@ body {
   width: 100%;
   position: relative;
   overflow-x: hidden;
+}
+
+.mask-bg {
+  background-image: url("../../../public//images/mask-bg.svg");
+  background-color: #7700A1;
+  background-position: -500px -400px;
+  position: relative;
 }
 
 .looper-bg {
@@ -909,6 +1019,6 @@ body {
 @media screen and (min-width: 489px) {
   .looper-bg {
     background-image: url("/images/looper-bg-desktop.svg");
-    background-position: -500px -300px;
+    background-position: 50% -300px;
   }
 }/*# sourceMappingURL=home.css.map */

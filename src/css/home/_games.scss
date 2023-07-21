@@ -1,4 +1,5 @@
 .games{
+    max-width: 2500px;
     position: absolute;
     top: 730px;
     left: -10px;
@@ -11,9 +12,16 @@
     padding-bottom: 20px;
     transform: rotate(2deg);
     z-index: 10;
+
+    @media screen and (min-width: 645px){
+        top: 750px;
+    }
+
     @media screen and (min-width: 1024px){
+        left: 50%;
+        transform: translateX(-50%) rotate(1deg);
         top: 950px;
-        transform: rotate(1deg);
+
     }
     .games-container{
         position: relative;
@@ -29,6 +37,7 @@
         transform: rotate(-4deg);
         @media screen and (min-width: 1024px){
             transform: rotate(-2deg);
+            left: 0;
             gap: 120px;
             padding: 35px 0;
         }

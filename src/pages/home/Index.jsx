@@ -13,9 +13,11 @@ import Footer from './Footer'
 export default function Index() {
   return (
     <div className="app">
-        <Header/>
-        <Gamefi/>
-        <Games/>
+        <div className="mask-bg">
+          <Header/>
+          <Gamefi/>
+          <Games/>
+        </div>
         <div className="looper-bg">
           <Units/>
           <Benefits/>

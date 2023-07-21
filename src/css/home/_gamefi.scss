@@ -1,7 +1,7 @@
 .gamefi{
-    background-image: url('../../../public//images/mask-bg.svg');
-    background-position: -500px -400px;
-    background-color: $purple;
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
     width: 100%;
     height: 800px;
     padding: 20px;
@@ -24,7 +24,7 @@
 
         @media screen and (min-width: 645px){
             width: 80%;
-            font-size: 40px;
+            font-size: 50px;
         }
 
         @media screen and (min-width: 1024px){
@@ -77,10 +77,11 @@
             border: 2.5px solid $orange;
             border-radius: 50px;
             position: absolute;
-            left: calc(50% - 217px);
-            top: 210px;
+            left: calc(50% - 179px);
+            top: 200px;
+
             @media screen and (min-width: 645px){
-                top: 250px;
+                top: 280px;
             }
             @media screen and (min-width: 1024px){
                 top: 480px;
@@ -107,13 +108,13 @@
         }
 
         .yellow-line{
-            width: 180px;
+            width: 150px;
             position: absolute;
             z-index: 10;
-            left: calc(50% - 190px);
+            left: calc(50% - 150px);
             top: 281px;
             @media screen and (min-width: 645px){
-                top: 320px;
+                top: 360px;
             }
             @media screen and (min-width: 1024px){
                 width: 250px;

@@ -1,15 +1,18 @@
 header{
-    max-width: 1280px;
+    max-width: 1440px;
+    left: 50%;
+    transform: translateX(-50%);
     position: absolute;
-    margin-top: 40px;
+    top: 40px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    z-index: 14;
 
     .menu-icon{
-        z-index: 12;
+        z-index: 16;
         cursor: pointer;
         display: flex;
         flex-direction: column;
@@ -28,20 +31,12 @@ header{
             box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
         }
 
-        #line-1.menu-close{
+        .line-1.menu-close{
             animation: closeLine1 .25s forwards ease-in;
         }
 
-        #line-2.menu-close{
+        .line-2.menu-close{
             animation: closeLine2 .25s forwards ease-in;
-        }
-
-        #line-1.menu-open{
-            animation: openLine1 .25s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        #line-2.menu-open{
-            animation: openLine2 .25s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
         }
     }
 
@@ -49,7 +44,7 @@ header{
         width: 190px;
         position: relative;
         top: 3px;
-        z-index: 10;
+        z-index: 0;
         transition: filter 0.4s linear;
     }
 
@@ -77,54 +72,87 @@ header{
             color: $purple;
         }
         
+    } 
+}
+
+.menu-container{
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    background-color: $white;
+    width: 100%;
+    height: 100vh;
+    padding-top: 150px;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    animation: showMenu .35s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    @media screen and (min-width: 1024px){
+        display: flex;
+        position: absolute;
+        z-index: 10;
+        background-color: transparent;
+        height: max-content;
+        padding-top: 0; 
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .menu-container{
-        z-index: 11;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: $white;
-        width: 100%;
-        height: 100vh;
-        padding-top: 150px;
-        display: none;
-        justify-content: center;
-        align-items: flex-start;
-        animation: showMenu .35s cubic-bezier(0.215, 0.610, 0.355, 1);
+    .menu-list{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        @include font(24px, 500, $dark-gray, $montserrat);
 
         @media screen and (min-width: 1024px){
-            display: flex;
-            position: absolute;
-            z-index: 10;
-            background-color: transparent;
-            height: max-content;
-            padding-top: 0; 
-            left: 50%;
-            transform: translateX(-50%);
+            flex-direction: row;
+            justify-content: center;
+            @include font(14px, 500, $white, $montserrat)
         }
 
-        .menu-list{
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 30px;
-            @include font(24px, 500, $dark-gray, $montserrat);
-            @media screen and (min-width: 1024px){
-                flex-direction: row;
-                justify-content: center;
-                @include font(14px, 500, $white, $montserrat)
-            }
-
-            .menu-opt:hover{
-                cursor: pointer;
-                color: darken($color: $light-gray, $amount: 30);
-                text-decoration: underline;
-                text-decoration-thickness: 2px;
-            }
+        .menu-opt:hover{
+            cursor: pointer;
+            color: darken($color: $light-gray, $amount: 30);
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
         }
+    }
+    .menu-icon{
+        position: absolute;
+        top: 53px;
+        left: 20px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        @media screen and (min-width: 1024px){
+            display: none;
+        }
+
+        .line{
+            width: 26px;
+            height: 3px;
+            background-color: $white;
+            box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .line-1.menu-close{
+            animation: closeLine1 .25s forwards ease-in;
+        }
+
+        .line-2.menu-close{
+            animation: closeLine2 .25s forwards ease-in;
+        }
+
     }
 }
 
@@ -149,6 +177,7 @@ header{
         rotate: 45deg;
     }
 }
+
 
 @keyframes openLine1 {
     0%{
