@@ -1,6 +1,6 @@
 
 export default function Footer() {
-  return (
+    return (
     <footer>
         <div className="community">
             <h2>Join Our Community</h2>
@@ -39,6 +39,9 @@ export default function Footer() {
                 <img src="/images/email-icon.svg" alt="email-icon" />
             </li>
         </ul>
+        <button className="up" >
+           <a href="#header"><img src="/images/arrow-icon.svg" alt="arrow-up" /></a> 
+        </button>
     </footer>
   )
 }

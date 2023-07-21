@@ -18,7 +18,7 @@ export default function Header() {
 
     return (
     <>
-    <header>
+    <header id="header">
         <div className="menu-icon" onClick={(e)=> setMenu(!menu)}>
             <div className={`line line-1 ${menu ? 'menu-close' : ''}`}></div>
             <div className={`line line-2 ${menu ? 'menu-close' : ''}`}></div>

@@ -28,9 +28,16 @@ $b-pink: #FF73E9;
 
 @import 'header', 'gamefi', 'games', 'units', 'benefits', 'footer';
 
+html{
+    scroll-behavior: smooth;
+}
+
+button{
+    cursor: pointer;
+}
+
 body{
     background-color: $dark-gray;
-    // background-color: white;
     height: 100vh;
 }
 
